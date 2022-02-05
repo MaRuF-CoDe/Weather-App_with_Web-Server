@@ -12,7 +12,7 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 
 //Setup handlebars engine and views location
 app.set('view engine', 'hbs')
-app.set('views',viewsPath)
+app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 //Setup static directory to serve
@@ -44,6 +44,22 @@ app.get('/weather', (req, res) => {
     res.send({
         forecast: 'It is snowing',
         location: 'Philadelphia'
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Maruf',
+        errorMassage: 'Help article not found'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Maruf',
+        errorMassage: 'Page not found'
     })
 })
 
