@@ -37,6 +37,11 @@ header a {
     text-decoration: none;
 }
 
+#message {
+    font-family: Georgia;
+    font-size: 20px;
+}
+
 .portrait {
     width: 250px;
 }
